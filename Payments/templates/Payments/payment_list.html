@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'payments/css/main.css' %}">
+<!--<link rel="stylesheet" href="{% static 'customer/css/test.css' %}">-->
+
+
+<div class="container">
+  
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Paid Amount</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Total Amount</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        {%  for obj in object_list %}
+        <tr>
+          
+          <td>{{ obj.id }}</td>
+          <td>{{ obj.Name }}</td>
+          <td>{{ obj.paid_amount }}</td>
+          <td>{{ obj.discount }}</td>
+          <td>{{ obj.tot_amount }}</td>
+          <td><a href="{% url 'Payment_Update' obj.id %}">Edit</a></td>
+        </tr>
+           
+        {% endfor %}
+      </tbody>
+    </table>
+    
+</div>
+
+{% endblock main %}

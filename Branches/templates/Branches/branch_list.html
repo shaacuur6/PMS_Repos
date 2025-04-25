@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'customer/css/main.css' %}">
+<!--<link rel="stylesheet" href="{% static 'customer/css/test.css' %}">-->
+
+
+<div class="container">
+  <h1>Welcome {{ requser.user }}</h1>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        {%  for obj in object_list %}
+        <tr>
+          <td>{{ obj.id }}</td>
+          <td>{{ obj.Name }}</td>
+          <td><a href="{% url 'branch_update' obj.id %}">Edit</a></td>
+        </tr>
+           
+        {% endfor %}
+      </tbody>
+    </table>
+    
+</div>
+
+{% endblock main %}
