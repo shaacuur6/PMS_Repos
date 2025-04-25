@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_ecmi_m4m*y+#vq1srjbxl^@b3&7v+tef9enck)8tdanne*i3@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','Shaacuur.local']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
