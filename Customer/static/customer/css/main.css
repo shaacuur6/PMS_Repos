@@ -4,6 +4,7 @@
 }
 .card-header{
   text-align: center;
+  text-decoration-underline;
   
   color: white;
   border-radius: 30px;
